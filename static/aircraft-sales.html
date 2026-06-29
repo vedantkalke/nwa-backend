@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Aircraft Sales · Noble Wings Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--mocha:#163240;--mocha-dk:#0E2230;--mocha-lt:#2F3873;--soft-cream:#E7EAF2;--dark-cocoa:#0F1B2A;--off-white:#FAFBFD;--line:#D7DEEB;--muted:#6A7387;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--dark-cocoa);background:var(--off-white);padding-top:68px}
+h1,h2,h3,h4{font-family:'Playfair Display',serif}a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(15,27,42,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(215,222,235,.1);padding:0 40px;height:68px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo-w{display:flex;align-items:center;gap:10px}.nav-logo-w img{height:70px;width:auto;image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges}.nav-brand{font-family:'Playfair Display',serif;color:#fff;font-size:15px;font-weight:600}
+.nav-back{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.7);font-size:13px;font-weight:500;transition:color .2s}.nav-back:hover{color:#fff}
+.nav-back svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 32px;border-radius:3px;font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;cursor:pointer;border:none;transition:all .3s;text-decoration:none}
+.btn-primary{background:var(--mocha);color:#fff}.btn-primary:hover{background:var(--mocha-lt);transform:translateY(-2px);box-shadow:0 12px 32px rgba(22,50,64,.4)}
+.btn-outline-white{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}.btn-outline-white:hover{background:#fff;color:var(--dark-cocoa)}
+.btn-outline-dark{background:transparent;color:var(--dark-cocoa);border:1.5px solid var(--dark-cocoa)}.btn-outline-dark:hover{background:var(--dark-cocoa);color:#fff}
+.eyebrow{display:flex;align-items:center;gap:8px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--mocha);margin-bottom:14px;font-weight:600}
+.eyebrow::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--mocha);flex-shrink:0}
+.site-footer{background:var(--mocha-dk);color:rgba(255,255,255,.5);text-align:center;padding:40px 24px;font-size:12px;border-top:1px solid rgba(255,255,255,.05)}
+.site-footer a{color:rgba(255,255,255,.4);transition:color .2s}.site-footer a:hover{color:#fff}
+body{padding-top:0;margin:0}
+.landing{
+  min-height:100vh;
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:28px 24px 32px;
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(160deg,#0a1624 0%,#0E2230 40%,#163240 75%,#1a3a52 100%);
+}
+.landing::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z' fill='%23ffffff' fill-opacity='0.015' fill-rule='evenodd'/%3E%3C/svg%3E");}
+.landing > img{width:clamp(215px,24vw,270px);height:auto;margin:0 0 10px;opacity:.96;filter:drop-shadow(0 12px 26px rgba(0,0,0,.18));}
+.landing-logo{width:250px;margin-bottom:22px;opacity:.95}
+.landing-sub{color:rgba(174,185,219,.8);font-size:11px;letter-spacing:4px;text-transform:uppercase;margin-bottom:8px;font-weight:500}
+.landing-tagline{color:rgb(251, 251, 255);font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;margin-bottom:24px;letter-spacing:2px;line-height:1.1}
+.landing-headline{
+  color:#fff;
+  font-family:"Times New Roman", Times, serif;
+  font-weight:700;
+  line-height:.96;
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:.015em;
+  max-width:min(1120px,94vw);
+  margin:0 auto;
+  text-shadow:0 12px 32px rgba(0,0,0,.22);
+}
+
+.landing-headline span{
+  display:block;
+  white-space:nowrap;
+}
+
+.line1,
+.line2{
+  font-family:"Times New Roman", Times, serif;
+  font-size:clamp(1.95rem,2.85vw,2.85rem);
+  line-height:.98;
+}
+
+.line2{
+  color:#ffffff;
+  margin-top:4px;
+}
+
+@media(max-width:900px){
+  .landing-headline{
+    max-width:94vw;
+    letter-spacing:.01em;
+  }
+
+  .landing-headline span{
+    white-space:normal;
+  }
+
+  .line1,
+  .line2{
+    font-size:clamp(1.65rem,6.2vw,2.25rem);
+    line-height:.98;
+  }
+}
+
+@media(max-width:520px){
+  .line1,
+  .line2{
+    font-size:clamp(1.45rem,7.6vw,2rem);
+  }
+}
+.landing-divider{width:58px;height:2px;background:rgba(174,185,219,.3);margin:0 auto 26px}
+.landing-desc{color:rgba(238,230,230,.64);font-family:'Cormorant Garamond',serif;font-size:clamp(.98rem,1.18vw,1.08rem);font-style:italic;max-width:620px;margin:14px auto 28px;line-height:1.55}
+.landing .btn{padding:15px 42px !important;font-size:12px !important;letter-spacing:1.4px !important;min-width:300px;}
+.scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.3);font-size:11px;letter-spacing:2px;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-hint::after{content:"";width:1px;height:40px;background:rgba(255,255,255,.2);animation:scrollLine 2s ease-in-out infinite}
+@keyframes scrollLine{0%,100%{opacity:.3}50%{opacity:1}}
+.landing-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between}
+.landing-nav a{color:rgba(255,255,255,.6);font-size:12px;font-weight:500;letter-spacing:.5px;transition:color .2s}
+.landing-nav a:hover{color:#fff}
+.landing-nav-logo{display:flex;align-items:center;gap:14px}
+.landing-nav-logo span{font-family:'Playfair Display',serif;color:#fff;font-size:14px;font-weight:600}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.fadeUp{animation:fadeUp .8s ease both}
+.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.35s}.d4{animation-delay:.5s}.d5{animation-delay:.65s}
+/* Smooth scroll animation */
+.reveal{
+  opacity:0;
+  transform:translateY(60px);
+  transition:all 1s ease;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+/* Premium floating animation */
+.float-card{
+  animation:floatMove 4s ease-in-out infinite;
+}
+
+@keyframes floatMove{
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-12px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+}
+/* Homepage movement removed for stable premium layout */
+</style>
+</head>
+<body>
+<nav class="landing-nav">
+  <a href="index.html">← Main Site</a>
+</nav>
+
+<section class="landing reveal">
+  <img src="/static/NWLOGO-1x.png" srcset="/static/NWLOGO-2x.png 2x" alt="Noble Wings Academy">
+  <p class="landing-tagline fadeUp d2">~ Aim High ~</p>
+  <div class="landing-divider fadeUp d2"></div>
+<h1 class="landing-headline fadeUp d3">
+  <span class="line1">MAKE YOUR FLIGHT SCHOOL OPERATIONS</span>
+  <span class="line2">EASIER WITH SPORTSTAR RTC</span>
+</h1>
+  <p class="landing-desc fadeUp d4">
+    Europe's most trusted EASA certified training aircraft — now available through Noble Wings Academy India.
+  </p>
+  <a href="aircraft-catalog.html" class="btn btn-outline-white fadeUp d5" style="padding:18px 48px;font-size:13px;letter-spacing:1.5px">
+    Click Here to Explore More &nbsp;→
+  </a>
+  <div class="scroll-hint"></div>
+</section>
+
+<footer class="site-footer"><p>© 2025 Noble Wings Academy India · Your runway to the airlines</p>
+<p style="margin-top:8px"><a href="mailto:asiadirector@nwa.aero">asiadirector@nwa.aero</a> &nbsp;·&nbsp; +91 9930050444</p></footer>
+<script>
+function revealSections() {
+  const reveals = document.querySelectorAll('.reveal');
+
+  reveals.forEach(section => {
+    const windowHeight = window.innerHeight;
+    const elementTop = section.getBoundingClientRect().top;
+    const revealPoint = 100;
+
+    if (elementTop < windowHeight - revealPoint) {
+      section.classList.add('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealSections);
+window.addEventListener('load', revealSections);
+</script>
+<script>
+window.addEventListener('scroll', function () {
+  const scroll = window.pageYOffset;
+  const landing = document.querySelector('.landing');
+
+  landing.style.backgroundPositionY = scroll * 0.4 + 'px';
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+# Secrets
+.env
+config_old.py
+
+# Data
+data/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Video (too large for Git)
+static/hero-bg.mp4
+
+# Local Netlify folder
+.netlify
